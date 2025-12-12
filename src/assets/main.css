@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --font-quicksand: "Quicksand", serif;
+  --color-primary: hsl(205, 50%, 90%);
+  --color-secondary: hsl(205, 50%, 10%);
+  --color-tertiary: hsl(265, 80%, 20%);
+  --color-accent: hsl(145, 80%, 20%);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-quicksand);
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+  }
+
+  .router-link-active {
+    text-decoration: underline;
+  }
+}
+
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
