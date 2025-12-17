@@ -3,9 +3,13 @@
 @theme {
   --font-quicksand: "Quicksand", serif;
   --color-primary: hsl(205, 50%, 90%);
+  --color-primary-surface: hsl(205, 50%, 95%);
   --color-secondary: hsl(205, 50%, 10%);
-  --color-tertiary: hsl(265, 80%, 20%);
-  --color-accent: hsl(145, 80%, 20%);
+  --color-tertiary: hsl(145, 80%, 20%);
+  --color-accent: hsl(265, 80%, 20%);
+  --shadow-card:
+    box-shadow: 0 2px 2px hsla(205, 50%, 10%, 0.3),
+    0 4px 4px hsla(205, 50%, 10%, 0.15);
 }
 
 @layer base {

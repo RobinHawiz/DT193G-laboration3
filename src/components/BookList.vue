@@ -74,7 +74,7 @@ onMounted(async () => {
     <PulseLoader class="[&>.v-pulse]:bg-tertiary!" />
   </div>
   <!-- Show book list when done loading -->
-  <ul v-else>
+  <ul v-else class="w-full max-w-100">
     <BookItem
       @delete-book="deleteBook"
       v-for="(book, index) in state.books"
