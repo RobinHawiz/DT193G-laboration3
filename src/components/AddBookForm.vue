@@ -26,6 +26,10 @@ function handleSubmit() {
   error.value = "";
 
   emit("submit", form);
+
+  form.title = "";
+  form.publishedYear = 0;
+  form.isRead = false;
 }
 </script>
 
