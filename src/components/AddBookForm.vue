@@ -6,7 +6,7 @@ const emit = defineEmits(["submit"]);
 
 const form: BookPayload = reactive({
   title: "",
-  publishedYear: 0,
+  publishedYear: 1,
   isRead: false,
 });
 
@@ -28,7 +28,7 @@ function handleSubmit() {
   emit("submit", form);
 
   form.title = "";
-  form.publishedYear = 0;
+  form.publishedYear = 1;
   form.isRead = false;
 }
 </script>
@@ -53,7 +53,7 @@ function handleSubmit() {
         id="published-year"
         name="publishedYear"
         type="number"
-        min="0"
+        min="1"
       />
     </div>
     <div class="mb-3 flex flex-row items-center">
