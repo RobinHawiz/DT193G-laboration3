@@ -11,8 +11,7 @@ const form: BookPayload = reactive({
 });
 
 function handleSubmit() {
-  const newBook: BookPayload = { ...form };
-  emit("submit", newBook);
+  emit("submit", form);
 }
 </script>
 
