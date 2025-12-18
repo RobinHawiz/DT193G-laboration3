@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { BookPayload } from "@/models/book";
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 
 const emit = defineEmits(["submit"]);
 
@@ -10,7 +10,21 @@ const form: BookPayload = reactive({
   isRead: false,
 });
 
+const error = ref("");
+
 function handleSubmit() {
+  if (form.title.length < 1 || form.title.length > 50) {
+    error.value = "Du måste skriva in en titel mellan 1 och 50 tecken";
+    return;
+  }
+
+  if (form.publishedYear > new Date().getFullYear()) {
+    error.value = "Utgivningsåret får inte överstiga innevarande år";
+    return;
+  }
+
+  error.value = "";
+
   emit("submit", form);
 }
 </script>
@@ -68,4 +82,5 @@ function handleSubmit() {
       Lägg till bok
     </button>
   </form>
+  <p v-if="error" class="text-red-500">{{ error }}</p>
 </template>
